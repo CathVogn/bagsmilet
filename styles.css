@@ -1,0 +1,488 @@
+*{
+    margin: 0px;
+    padding: 0px;
+   
+    }
+
+    /* scollbar */
+    html, body, section {
+        block-size: 100%;
+      }
+      
+      html {
+        scroll-snap-type: y mandatory;
+      }
+      
+      /* alle 'sektioner' har dette scroll  */
+      section {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+      }
+
+      section:nth-of-type(even) {
+        background-color: #0E0830; 
+      }
+      
+      section:nth-of-type(odd) {
+        background-color: #000000;
+      }
+      
+
+#baggrund{
+    @apply h-screen flex items-end;
+     background-color: #21284E;  
+        background-image: linear-gradient(#3d4eb15c, rgba(172, 174, 47, 0.331)), url(img/stjernehimmel.png);
+        min-height: 100vh;
+        width: 100%;
+        background-size: 100% auto; 
+        background-attachment: fixed; 
+        animation: backgroundSize 20s ease-in forwards 1s; 
+}
+
+/* Bevægelse - zoom ud */
+@keyframes backgroundSize {
+    0%{
+        background-size: 140% auto;
+    }
+
+    100%{
+        background-size: 100% auto;
+    }
+}
+
+/* Forside */
+.forside img{
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+
+
+.forside {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.forside h1 {
+    margin-top: 15%;
+    color: whitesmoke;
+    font-family: 'Ms Madi', cursive;
+    font-size: 180px;
+    font-weight: normal; 
+}
+
+
+/* Avis sektion */
+ .avis {
+    transform: rotate(10deg);
+    padding-left: 450px; 
+}
+
+#baggrund1{
+     background-color:black;  
+        background-image: url(img/gulestjerner1.png);
+        min-height: 150vh;
+        width: 100%;
+        background-attachment: fixed; 
+        padding-top: 200px;
+}
+
+/* jeg er sektion */
+  .sektion2 h1{
+    padding-top: 200px;
+    font-size: 100px;
+    color: white;
+    font-family: 'Ms Madi', cursive;
+  }
+
+  .sektion2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+ .bottom-image {
+  width: 100%;
+  height: auto;
+  padding-top: 75px;
+  bottom: 0;
+  }
+
+  #jeger{
+    color: #ffe87c;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+/* Leif fødes og baggrund til hele tidslinjen */
+
+  .baggrund3{
+    background-image: url(img/gulestjerner1.png);
+    min-height: 1075vh;
+    width: 100%;
+    background-attachment: fixed; 
+    padding-top: 100px;
+  }
+
+  .sektion3{
+    padding-bottom: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .sektion3 h1{
+    font-size: 300px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal; 
+  }
+
+  .sektion3 h2{
+    font-size: 75px;
+    color: white;
+    font-family: 'Ms Madi', cursive;
+    font-weight: normal; 
+  }
+
+/* barndom */
+  .barndom h2{
+    font-size: 200px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 360px;
+    font-weight: lighter; 
+  }
+
+  .barndom p{
+    font-size: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter; 
+    width: 50%;
+    float: right;
+    padding-right: 80px;
+    padding-top: 50px;
+    text-align: right;
+  }
+
+
+  .barndom{
+    background-image: url(img/brøderne.png);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    margin-left: 5%;
+    position: relative;
+  }
+
+
+ /* Fade fra højre*/ 
+  [data-aos="fade-right"] {
+    opacity: 0;
+    transform: translateX(50px); 
+    transition: opacity 3s ease-in-out, transform 2s ease-in-out;
+  }
+  
+  [data-aos="fade-right"].aos-animate {
+    opacity: 1;
+    transform: translateX(0); 
+  }
+
+ /* årstal tæller op*/ 
+ @property --num {
+  syntax: "<integer>";
+  initial-value: 64;
+  inherits: false;
+}
+
+
+#årstal {
+  animation: counter 5s ease-in-out forwards;
+  counter-reset: num var(--num);
+  font-size: 300px;
+}
+#årstal::after {
+  content: counter(num);
+}
+
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 64;
+  }
+  
+}
+/* Animation fade fra venstre */
+[data-aos="fade-left"] {
+  opacity: 0;
+  transform: translateX(-50px); 
+  transition: opacity 3s ease-in-out, transform 2s ease-in-out;
+}
+
+[data-aos="fade-left"].aos-animate {
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+
+/* Miljø */
+
+
+.miljo{
+  background-image: url(img/fængsel.png);
+  background-repeat: no-repeat;
+  background-position: right bottom; 
+  min-height: 50vh;
+  position: relative;
+  margin-right: 10%;
+  padding-bottom: 150px;
+  padding-top: 300px;
+}
+
+
+
+.miljo h2{
+  font-size: 200px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 60px;
+  font-weight: lighter; 
+}
+
+.miljo p{
+  font-size: 30px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter; 
+  width: 50%;
+  float: left;
+  padding-left: 80px;
+  padding-top: 30px;
+}
+
+
+/* Misbrug */
+
+.misbrug h2{
+  font-size: 175px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  float: right;
+  font-weight: lighter; 
+  padding-right: 60px;
+  padding-top: 200px;
+}
+
+.misbrug p{
+  font-size: 30px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter; 
+  width: 50%;
+  float: right;
+  padding-right: 80px;
+  padding-top: 50px;
+  text-align: right;
+}
+
+
+.misbrug{
+  background-image: url(img/kanyle.png);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  margin-left: 5%;
+  position: relative;
+  background-position: left bottom;
+}
+/* Børn */
+.born{
+  background-image: url(img/knusthjerte.png);
+  background-repeat: no-repeat;
+  background-position: right bottom; 
+  min-height: 50vh;
+  position: relative;
+  margin-right: 10%;
+  padding-bottom: 150px;
+  padding-top: 400px;
+}
+
+
+
+.born h2{
+  font-size: 200px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  padding-left: 60px;
+  font-weight: lighter; 
+}
+
+.born p{
+  font-size: 30px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: lighter; 
+  width: 50%;
+  float: left;
+  padding-left: 80px;
+  padding-top: 30px;
+}
+
+/* Video med tekst over */
+.video-container video{
+  padding-top: 50px;
+  width: 100%;
+  height: 100%;
+}
+.text-overlay h1{
+  padding-top: 25px;
+  margin-left: 25%;
+  font-size: 75px;
+  color: white;
+  font-family: 'Ms Madi', cursive;
+}
+
+.video-container {
+    width: 100%;
+    position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 30%;
+  color: white;
+  font-size: 24px;
+  width: 100%;
+}
+
+.bottom-image1 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  padding-top: 55px;
+  }
+
+  .bottom-image2{
+   margin-left: 10%;
+    margin-right: 10%; 
+  width: 80%;
+  padding-top: 100px;
+  }
+
+  .info{
+    padding-top: 500px;
+    color: #000000;
+    min-height: 200vh;
+  }
+
+  .info h1{font-size: 150px;
+    color: white;
+    font-family: 'Ms Madi', cursive;
+    padding-left: 150px;
+    font-weight: lighter;
+    margin-left: 20%;
+   margin-right: 25%;
+  }
+
+  .info h2{font-size: 50px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter; 
+    margin-left: 35%;
+    margin-right: 25%;}
+
+  .info p{
+    padding-top: 30px;
+    margin-left: 10%;
+    font-size: 30px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter; 
+    width: 80%;}
+
+
+    .sektion4{
+      padding-top: 400px;
+      padding-bottom: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+  
+    .sektion4 h1{
+      font-size: 300px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: normal; 
+    }
+  
+    .sektion4 h2{
+      font-size: 75px;
+      color: white;
+      font-family: 'Ms Madi', cursive;
+      font-weight: normal; 
+    }
+
+    .bottom-image3 {
+      position: absolute;
+      width: 100%;
+      height: auto;
+
+      }
+
+      /* citat */
+    .citat1{
+      padding-top: 500px;
+      margin-left: 13%;
+    }
+
+    .citat1 p{
+      font-size: 50px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: lighter; 
+      padding-top: 10px;
+    }
+
+    .klik p{
+      font-family: 'Ms Madi', cursive;
+      margin-left: 40%;
+      font-size: 50px;
+      padding-top: 50px;
+    }
+
+    a{
+  color: white;
+    }
+
+    .bottom-image4{
+      position: relative;
+      width: 100%;
+      height: auto;
+      bottom: 0;
+      padding-top: 35px;
+    }
+
+    .tak{
+      height: 20%;
+    }
+
+    .tak h2{
+      padding-top: 30px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 30px;
+      margin-left: 20%;
+      margin-right: 15%;
+      font-weight: lighter; 
+      text-align: center;
+    }
